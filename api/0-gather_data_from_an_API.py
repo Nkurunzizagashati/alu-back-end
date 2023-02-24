@@ -25,7 +25,8 @@ if __name__ == "__main__":
         let's request the todo list for the employee
     """
     employee_todo = requests.get(
-            'https://jsonplaceholder.typicode.com/users/{}/todos'.format(argv[1]))
+            'https://jsonplaceholder.typicode.com/users/{}/todos'
+            .format(argv[1]))
     """
         let's create an empty dictionary to store task
         status in bolean format
@@ -37,13 +38,14 @@ if __name__ == "__main__":
     """
     employee_todo_JSON = employee_todo.json()
     """
-        let's loop through employee_todo_JSON's dictionary and add the completed
-        tasks into our tasks dictionary
+        let's loop through employee_todo_JSON's dictionary and add
+        the completed tasks into our tasks dictionary
     """
     for dictionary in employee_todo_JSON:
         tasks.update({dictionary.get("title"): dictionary.get("completed")})
         """
-            let's return the name, tasks completed and total number of tasks completed
+            let's return the name, tasks completed and total
+            number of tasks completed
         """
     EMPLOYEE_NAME = name
     TOTAL_NUMBER_OF_TASKS = len(tasks)
