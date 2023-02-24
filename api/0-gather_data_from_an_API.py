@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-    a script that uses API for a given employee ID and returns
-    a list of his/her todo list
+    python script that returns TODO list progress for a given employee ID
 """
 import json
 import requests
