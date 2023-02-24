@@ -4,6 +4,7 @@
 """
 import json
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
@@ -15,7 +16,7 @@ if __name__ == "__main__":
     """
         let's convert this json file to dictionary file
     """
-    employee = json.loads(employee_info.txt)
+    employee = employee_info.json()
     """
         let's get the name of an employee
     """
@@ -34,21 +35,21 @@ if __name__ == "__main__":
         let's convert the employee_todo into a javascript object
         before it was a json file
     """
-    employee_todo_JSON = json.loads(employee_todo.txt)
+    employee_todo_JSON = employee_todo.json()
     """
         let's loop through employee_todo_JSON's dictionary and add the completed
         tasks into our tasks dictionary
     """
-    for dictioanary in employee_todo_JSON:
+    for dictionary in employee_todo_JSON:
         tasks.update({dictionary.get("title"): dictionary.get("completed")})
         """
             let's return the name, tasks completed and total number of tasks completed
         """
-        EMPLOYEE_NAME = name
-        TOTAL_NUMBER_OF_TASKS = len(tasks)
-        NUMBER_OF_DONE_TASKS = len([i for i, j in tasks.items() if j is True])
-        print("Employee {} is done with tasks({}/{}):".format(
-            EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
-        for i, j in tasks.items():
-            if j is True:
-                print("\t {}".format(k))
+    EMPLOYEE_NAME = name
+    TOTAL_NUMBER_OF_TASKS = len(tasks)
+    NUMBER_OF_DONE_TASKS = len([i for i, j in tasks.items() if j is True])
+    print("Employee {} is done with tasks({}/{}):".format(
+        EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+    for i, j in tasks.items():
+        if j is True:
+            print("\t {}".format(i))
