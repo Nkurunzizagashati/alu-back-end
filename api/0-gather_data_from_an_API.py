@@ -3,7 +3,6 @@
     a script that uses API for a given employee ID and returns
     a list of his/her todo list
 """
-
 import json
 import requests
 import sys
